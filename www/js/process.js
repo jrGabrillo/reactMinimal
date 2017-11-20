@@ -1,24 +1,26 @@
-let timer = 0;
-function clock() {
-	let dom = `${new Date().toLocaleTimeString()}`;
-	ReactDOM.render(dom, document.getElementById('clock'));
+var setTimer = 0;
+function clock(){
+	let timer = <h1>
+				{new Date().toLocaleTimeString()}
+			</h1>;
+	ReactDOM.render(timer,document.getElementById('timer'));	
 
-	timer = setTimeout(function(){
-					clock();
-				},1000);
+	setTimer = setTimeout(function(){
+		clock();
+	},1000);
+};
+
+function stopClock(){
+	clearInterval(setTimer);
 }
 
-function stop(){
-	clearTimeout(timer);
-	console.log('x');
-}
+let btn = <div>
+				<input type='number' placeholder='Enter the first Number' /> + 
+				<input type='number' placeholder='Enter the first Number' />
+				<div id='timer' className='text'></div>
+				<button onClick={clock}>Start Clock</button>
+				<button onClick={stopClock}>Stop Clock</button>
+			</div>
 
 
-let _root = document.getElementById('root');
-let dom = <div>
-			<div id='clock'></div>
-				<input type='button' onClick={clock} value='Start Clock' />
-				<input type='button' onClick={stop} value='Stop Clock' />
-			</div>;
-
-ReactDOM.render(dom,_root);
+ReactDOM.render(btn,document.getElementById('root'));
