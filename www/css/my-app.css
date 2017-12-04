@@ -13,3 +13,17 @@ input{
 	font-size: 50px;
 	font-family: 'arial';
 }
+
+ul li{
+	font-size: 30px;
+	color:red;
+}
+
+.imCustomClass{
+	text-decoration: underline;
+	color:yellow;
+}
+
+#audio{
+	display: none;
+}
