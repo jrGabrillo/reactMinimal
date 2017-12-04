@@ -1,7 +1,14 @@
+// <video width="320" height="240" controls>
+//   <source src="movie.mp4" type="video/mp4">
+//   <source src="movie.ogg" type="video/ogg">
+//   Your browser does not support the video tag.
+// </video>
+
 let process = {
 	menu:function(){
-		 // onClick={process.audio('audio_bomb').play()}
+		let source_vid = 'https://www.youtube.com/watch?v=d-P7YUSKbpQ';
 		let content = <div>
+		    <iframe src={source_vid} width="100%" height='300px'/>
 			<audio id="audio_bomb">
 				<source src="audio/bomb.mp3" type="audio/mp3" />
 			</audio>
@@ -52,8 +59,10 @@ let process = {
 					<audio id="audio">
 						<source src="audio/horse.ogg" type="audio/ogg" />
 					</audio>
-					<img src='img/image.jpg' width='100px' />
-					Loading...
+					<div align='center'>
+						<img src='img/image.jpg' width='100px' />
+						Loading...
+					</div>
 				</div>;
 		ReactDOM.render(content,document.getElementById('root'));
 		process.audio('audio').play();
